@@ -11,7 +11,7 @@ class Solution {
                 }
             }
         }
-            return new int[]{-1,-1};
+            return new int[]{-48489,4949};
         
         }
     }
