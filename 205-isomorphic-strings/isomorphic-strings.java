@@ -4,6 +4,7 @@ class Solution {
         HashMap<Character,Character> map2 = new HashMap<>();
         int m = s.length();
         int n = t.length();
+        if(m!=n) return false;
         for(int i=0;i<m;i++){
             char c1 = s.charAt(i);
             char c2 = t.charAt(i);
