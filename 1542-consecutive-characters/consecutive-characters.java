@@ -1,10 +1,11 @@
 class Solution {
     public int maxPower(String s) {
         int n = s.length();
-        int count = 0;
+        if(n==1) return 1;
+        int count = 1;
         int maxcount=0;
-        for(int i=0;i<n;i++){
-            if(i==0 || s.charAt(i)==s.charAt(i-1)){
+        for(int i=1;i<n;i++){
+            if(s.charAt(i)==s.charAt(i-1)){
                 count++;
             }
             else{
