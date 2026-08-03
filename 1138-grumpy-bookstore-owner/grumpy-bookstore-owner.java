@@ -8,14 +8,15 @@ class Solution {
                 sum+=c[i];
             }
         }
-        int maxsum = sum;
+   
         for(int i = 0;i<k;i++){
             if(g[i]==1){
                 sum = sum+c[i];
-                maxsum = Math.max(maxsum,sum);
+                
                 
             }
         }
+        int maxsum = sum;
         for(int i = k;i<n;i++){
             if(g[i]==1){
                 sum = sum+c[i];
