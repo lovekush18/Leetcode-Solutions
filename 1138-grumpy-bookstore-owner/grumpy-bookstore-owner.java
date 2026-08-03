@@ -3,7 +3,6 @@ class Solution {
         int m = c.length;
         int n = g.length;
         int sum = 0;
-       
         for(int i = 0;i<n;i++){
             if(g[i]==0){
                 sum+=c[i];
@@ -13,7 +12,8 @@ class Solution {
         for(int i = 0;i<k;i++){
             if(g[i]==1){
                 sum = sum+c[i];
-                maxsum =sum;
+                maxsum = Math.max(maxsum,sum);
+                
             }
         }
         for(int i = k;i<n;i++){
