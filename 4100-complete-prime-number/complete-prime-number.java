@@ -24,13 +24,13 @@ class Solution {
 
             prefix = prefix * 10 + (s.charAt(i) - '0');
 
-            if (!isPrime(prefix))
+            if ((!isPrime(prefix))==true)
 
                 return false;
 
         }
 
-        // Suffix check
+      
 
         for (int i = 0; i < s.length(); i++) {
 
