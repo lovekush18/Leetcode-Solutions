@@ -1,44 +1,61 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-         int n  = nums.length;
-          if(n==1) return nums[0];
-         if(nums[0]!=nums[1]){
-            return nums[0];
-         }
-         if(nums[n-1]!=nums[n-2]){
-            return nums[n-1];
-         }
+        // int n  = nums.length;
+        //  if(n==1) return nums[0];
+        //  if(nums[0]!=nums[1]){
+        //     return nums[0];
+        //  }
+        //  if(nums[n-1]!=nums[n-2]){
+        //     return nums[n-1];
+        //  }
+        //   // is type ke que m agr single element exist krega to array ki length hamesha odd hogi
          
-        int low = 1, high = n-2;
-        while(low<=high){
-            int mid = low+(high-low)/2;
-            if(nums[mid]!=nums[mid-1] && nums[mid]!=nums[mid+1]){
-                return nums[mid];
-            }
-            if(mid%2==0){
-                if(nums[mid]==nums[mid+1]){
-                    low = mid+1;
-                }
-                else{
-                    high = mid-1;
-                }
-            }
-            else{
-                if(nums[mid]==nums[mid-1]){
-                    low = mid+1;
-                }
-                else{
-                    high = mid-1;
-                }
-            }
-        }
-        return -1;
-    }
-}
-// for(int i=1;i<n-1;i++){
-        //     if(nums[i]!=nums[i-1] && nums[i]!=nums[i+1]){
-        //         return nums[i];
+        // int low = 0, high = n-1;
+        // while(low<=high){
+        //     int mid = low+(high-low)/2;
+        //     if(nums[mid]!=nums[mid-1] && nums[mid]!=nums[mid+1]){
+        //         return nums[mid];
+        //     }
+        //     else if(mid%2==0){ // mid agr even hua to uske left m size even aur right m size even
+        //         if(nums[mid]==nums[mid+1]){
+        //             low = mid+1;
+        //         }
+        //         // agr mid even h to uske right side dekhenge 
+        //         else{
+        //             high = mid-1;
+        //         }
+        //     }
+        //     else{
+        //         if(nums[mid]==nums[mid-1]){
+        //             low = mid+1;
+        //         }
+        //         // agr mid odd h to uske left side dekhenge 
+        //         else{
+        //             high = mid-1;
+        //         }
         //     }
         // }
-        // return -2;
+        // return -1;
+        int n  = nums.length;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i =0;i<n;i++){
+            if(map.containsKey(nums[i])){
+                int c = map.get(nums[i]);
+                map.put(nums[i],c+1);
+            }
+            else{
+                map.put(nums[i],1);
+            }
+        }
+        ArrayList<Integer> list = new ArrayList<>(map.keySet());
+        for(int i = 0;i<list.size();i++){
+            int ele = list.get(i);
+            int val = map.get(ele);
+            if(val==1) return ele;
+        }
+        return -1;
+
+    }
+}
+
         
