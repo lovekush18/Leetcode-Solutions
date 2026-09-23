@@ -12,8 +12,8 @@ class Solution {
         int ans = -1;
         while(l<=hi){
             int mid = l+(hi-l)/2;
-            boolean q = fun(arr,mid,m,k);
-            if(q==true){
+            int q = fun(arr,mid,m,k);
+            if(q>=m){
                 ans = mid;
                 hi = mid-1;
             }
@@ -23,7 +23,7 @@ class Solution {
         }
         return ans;
     }
-    static boolean fun(int[] arr, int day, int m, int k) {
+    static int fun(int[] arr, int day, int m, int k) {
         int cnt = 0;
         int ans = 0;
         int n = arr.length;
@@ -39,8 +39,7 @@ class Solution {
             
         }
         ans+=cnt/k;
-        if(ans>=m) return true;
-        return false;
+        return ans;
     }
 
 }
