@@ -14,8 +14,8 @@ class Solution {
         int ans1 = -1;
         while(i<=j){
             int mid = i+(j-i)/2;
-            boolean ans = fun(arr,mid,days);
-            if(ans==true){
+            int ans = fun(arr,mid);
+            if(ans<=days){
                 ans1 = mid;
                 j = mid-1;
             }
@@ -26,7 +26,7 @@ class Solution {
         return ans1;
     }
 
-    public static boolean fun(int[] arr, int capacity, int days) {
+    public static int fun(int[] arr, int capacity) {
         int sum1 = 0;
         int day = 1;
         for(int i=0;i<arr.length;i++){
@@ -40,8 +40,7 @@ class Solution {
                 sum1+=arr[i];
             }
         }
-        if(day<=days) return true;
-        return false;
+        return day;
     }
 
 }
