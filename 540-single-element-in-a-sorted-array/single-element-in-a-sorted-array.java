@@ -1,20 +1,23 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
         int n  = nums.length;
-         if(n==1) return nums[0];
-         if(nums[0]!=nums[1]){
+
+        if(n==1) return nums[0];
+        
+        if(nums[0]!=nums[1]){
             return nums[0];
-         }
-         if(nums[n-1]!=nums[n-2]){
+        }
+
+        if(nums[n-1]!=nums[n-2]){
             return nums[n-1];
-         }
-          // is type ke que m agr single element exist krega to array ki length hamesha odd hogi
-         
-        int low = 0, high = n-1;
+        }
+        int ans = -1;
+        int low = 1, high = n-2;
         while(low<=high){
             int mid = low+(high-low)/2;
             if(nums[mid]!=nums[mid-1] && nums[mid]!=nums[mid+1]){
-                return nums[mid];
+                ans = nums[mid];
+                break;
             }
             else if(mid%2==0){ 
                 if(nums[mid]==nums[mid+1]){
@@ -35,7 +38,7 @@ class Solution {
                 }
             }
         }
-        return -1;
+        return ans;
 
         // HashMap Approach
 
