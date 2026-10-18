@@ -3,7 +3,7 @@ class Solution {
         StringBuilder sb = new StringBuilder(s);
         int i = 0 , j =0;
         while(i<sb.length()){
-            j = i;
+        
             while(j<sb.length() && sb.charAt(i)==sb.charAt(j)){
                 j++;
             }
