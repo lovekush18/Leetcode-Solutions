@@ -2,7 +2,7 @@ class Solution {
     public String reverseWords(String s) {
         Stack<String> st = new Stack<>();
         
-         String[] arr = s.trim().split("\\s+");
+         String[] arr = s.strip().split("\\s+");
         int n = arr.length;
         for(int i=0;i<n;i++){
             String m = arr[i];
