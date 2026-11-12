@@ -8,7 +8,7 @@ class Solution {
                 j++;
             }
             if(i==j){
-                String s1 = String.valueOf(nums[i]);
+                String s1 = String.valueOf(nums[j]);
                 list.add(s1);
             }
             if(i!=j){
