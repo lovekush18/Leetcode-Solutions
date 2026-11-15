@@ -17,7 +17,7 @@ class Solution {
                 count+=evenpresum;
             }
         }
-        return (int)(count%mod);
+        return (int)(count%mod) ;
         
     }
 }
