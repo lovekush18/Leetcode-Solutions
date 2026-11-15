@@ -3,12 +3,12 @@ class Solution {
         int n = nums.length;
         int i = 0;
         int j = k-1;
-        int sum = 0;
+        double sum = 0;
         while(i<=j){
             sum+=nums[i];
             i++;
         }
-        int maxsum = sum;
+        double maxsum = sum;
         int l = 0;
         while(j<n-1){
             sum = sum-nums[l];
